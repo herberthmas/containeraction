@@ -1,17 +1,17 @@
 on: [push]
 
 jobs:
-	my-job:
-		runs-on: ubuntu-latest
+  my-job:
+    runs-on: ubuntu-latest
 
-	steps: 
-	- uses: actions/checkout@v2
-	- name: run the action
-	  id:hello
-	  uses: ./
-	  with:
-	      myInput: ‘Herberth Mas’
-	- name: output
-	  run: |
-	      echo ${{steps.hello.outputs.memory}}
-	      echo “total memory successfully output”
+    steps:
+    - uses: actions/checkout@v2
+    - name: run the action
+      id: hello
+      uses: ./
+      with:
+        myInput: 'Herberth'
+    - name: output the memory
+      run: |
+        echo ${{ steps.hello.outputs.memory }}
+        echo "total memory successfully output"
